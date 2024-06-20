@@ -13,5 +13,13 @@ namespace MyWebAPI8.Helper
             Technology = 2,
             Travel = 3
         }
+        
+        public enum APIResponseStatus
+        {
+            Success = 1,
+            Error = 2,
+            NotFound = 3,
+            Created = 4
+        }
     }
 }

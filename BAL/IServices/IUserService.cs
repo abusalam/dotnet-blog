@@ -10,7 +10,7 @@ namespace MyBlogAPI8.BAL.IServices
     public interface IUserService
     {
         Task<int> CreateUser(UserModel um);
-        Task<IQueryable<User>> GetAllUsers();
-        Task<ICollection<User>> GetAllUsersAsync();
+        IQueryable<UserModel> GetAllUsers();
+        Task<ICollection<UserModel>> GetAllUsersAsync();
     }
 }

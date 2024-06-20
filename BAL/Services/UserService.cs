@@ -27,15 +27,15 @@ namespace MyBlogAPI8.BAL.Services
             return newUser.Id;
         }
 
-        public async Task<IQueryable<User>> GetAllUsers()
+        public IQueryable<UserModel> GetAllUsers()
         {
-            IQueryable<User> result = this._UserRepo.GetAll();
+            IQueryable<UserModel> result = _mapper.Map<IQueryable<UserModel>>(this._UserRepo.GetAll());
             return result;
         }
 
-        public Task<ICollection<User>> GetAllUsersAsync()
+        public async Task<ICollection<UserModel>> GetAllUsersAsync()
         {
-            Task<ICollection<User>>? result = this._UserRepo.GetAllAsync();
+            ICollection<UserModel>? result = _mapper.Map<ICollection<UserModel>>( await this._UserRepo.GetAllAsync());
             return result;
         }
     }

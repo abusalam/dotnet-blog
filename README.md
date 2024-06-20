@@ -5,6 +5,19 @@
 ```sh
 dotnet tool update --global dotnet-ef
 ```
+
+### [Setup ConnectionString Storage](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-8.0)
+
+```sh
+dotnet add package Microsoft.Extensions.Configuration
+dotnet add package Microsoft.Extensions.Configuration.UserSecrets
+dotnet user-secrets init
+dotnet user-secrets set ConnectionStrings:BlogCon "Host=localhost;Database=my_blog;Username=postgres;Password=postgres"
+```
+
+Replace the values in the connection string as per your local environment setup
+
+
 ### Generate Migration Scafolds
 
 ```sh
